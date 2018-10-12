@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Bartender</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>window.$ = window.jQuery = require('jquery');
+    
+    
+    </script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+    <body class="text-center ">
+        <div class="container">
+            <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="#" onclick="returnmain()">Home</a>
+                    <a href="#"onclick="returncategorys()">Categorys</a>
+                    <a href="#"onclick="returneula()">Eula</a>
+                    <a href="# "onclick="returnachievements()">Achievements</a>
+                    <a href="# "onclick="">Dutch</a>
+                    <a href="#" onclick="returnlogin()">Logout</a>
+            </div>
+            <div class="row">
+                    <div class="col-sm-1">
+                        <div class="containerbtn" onclick="openNav();">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                </div>
+                <div class="col-sm-11">
+                  
+                        <p>Last updated: (add date)
+                                Please read this End­User License Agreement ("Agreement") carefully before clicking the "I Agree"
+                                button, downloading or using My Application (change this) ("Application").
+                                By clicking the "I Agree" button, downloading or using the Application, you are agreeing to be bound
+                                by the terms and conditions of this Agreement.
+                                If you do not agree to the terms of this Agreement, do not click on the "I Agree" button and do not
+                                download or use the Application.
+                                License
+                                My Company (change this) grants you a revocable, non­exclusive, non­transferable, limited license
+                                to download, install and use the Application solely for your personal, non­commercial purposes
+                                strictly in accordance with the terms of this Agreement.
+                                Restrictions
+                                You agree not to, and you will not permit others to:
+                                a) license, sell, rent, lease, assign, distribute, transmit, host, outsource, disclose or otherwise
+                                commercially exploit the Application or make the Application available to any third party.
+                                The Restrictions section is for applying certain restrictions on the app usage, e.g. user can't sell
+                                app, user can't distribute the app. For the full disclosure section, create your own EULA.
+                                Modifications to Application
+                                My Company (change this) reserves the right to modify, suspend or discontinue, temporarily or
+                                permanently, the Application or any service to which it connects, with or without notice and without
+                                liability to you.
+                                The Modifications to Applicati</p>
+                    </div>
+            </div>
+        </div>
+      </body>
+      <script src="db.js"></script>
+      <script>
+           let win = new BrowserWindow({
+        webPreferences: {
+          plugins: true
+        }
+      })
+    
+       
+            // You can also require other files to run in this process
+            require('./renderer.js')
+            function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+      }
+      
+      /* Set the width of the side navigation to 0 */
+      function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+      }
+          </script>
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+      
+    </script>
+  </body>
+</html>

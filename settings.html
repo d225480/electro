@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Bartender</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+    <body class="text-center ">
+        <div class="container">
+            <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="#" onclick="returnmain()">Home</a>
+                    <a href="#"onclick="returncategorys()">Categorys</a>
+                    <a href="#"onclick="returneula()">Eula</a>
+                    <a href="# "onclick="returnachievements()">Achievements</a>
+                    <a href="# "onclick="">Dutch</a>
+                    <a href="#" onclick="returnlogin()">Logout</a>
+            </div>
+            <div class="row">
+                    <div class="col-sm-1">
+                    <div class="containerbtn" onclick="openNav();">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </body>
+      <script src="db.js"></script>
+      <script>
+        
+       
+            // You can also require other files to run in this process
+            require('./renderer.js')
+            function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+      }
+      
+      /* Set the width of the side navigation to 0 */
+      function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+      }
+          </script>
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+      
+    </script>
+  </body>
+</html>

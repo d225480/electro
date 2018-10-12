@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cocktail App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>window.$ = window.jQuery = require('jquery');
+    require('slick-carousel');</script>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <body class="text-center">   
+        <div class="container">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#" onclick="returnmain()">Home</a>
+                    <a href="#"onclick="returncategorys()">Categorys</a>
+                    <a href="#"onclick="returneula()">Eula</a>
+                    <a href="# "onclick="returnachievements()">Achievements</a>
+                    <a href="# "onclick="">Dutch</a>
+                    <a href="#" onclick="returnlogin()">Logout</a>
+            </div>
+            <div class="row">
+                <div class="col-sm-1">
+                    <div class="containerbtn" onclick="openNav();">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                </div>
+                <div class="col-sm-11" style="margin-top:30px; ">
+                    <h2 style="text-align: left; margin-bottom:20px;">Suggestions</h2>
+                    <div class="row" id="row">
+                            <script>
+                                    var mysql = require('mysql');
+                // Add the credentials to access your database
+                var connection = mysql.createConnection({
+                    host     : 'localhost',
+                    user     : 'root',
+                    password : 'secret', // or the original password : 'apaswword'
+                    database : 'electronjs'
+                });
+                
+                connection.connect(function(err) {
+                    if(err){
+                        console.log(err.code);
+                        console.log(err.fatal);
+                    }
+                });
+                $select = "SELECT * FROM cocktails ";
+                
+                connection.query($select, function(err, rows, fields) {
+                    if(err){
+                        console.log("An error ocurred performing the query.");
+                        console.log(err);
+                        return;
+                    }
+                    var checker = 0;
+                    if(rows.length != 0)
+                    {
+                        
+                        var newrow = false;
+                        rows.forEach(function(element) {
+                            checker = checker + 1;
+                                  
+                            console.log(checker);
+                            var put = '<div class="col-sm-3"><div class="col-sm-12"><img src="https://via.placeholder.com/100x100" alt="placeholder"></div><div class="col-sm-12"><p>'+  element["name"] + '</p></div>';
+                            document.getElementById("row").innerHTML+= put;
+                         
+                            
+                        console.log(element);
+                        });
+                        
+                      
+                    }
+                    else
+                    {
+                        
+                    }
+                    connection.end(function(){
+                    });
+                });
+                                    
+                                    </script>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-11 " style="margin-top:10px; ">
+                        <h2 style="text-align: left; margin-bottom:20px;">Recent</h2>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="col-sm-12">
+                                    <img src="https://via.placeholder.com/100x100" alt="placeholder">
+                                </div>
+                                <div class="col-sm-12">
+                                    <p>cocktail names</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-3"><div class="col-sm-12">
+                                    <img src="https://via.placeholder.com/100x100" alt="placeholder">
+                                </div>
+                                <div class="col-sm-12">
+                                        <p>cocktail names</p>
+                                </div></div>
+                            <div class="col-sm-3"><div class="col-sm-12">
+                                    <img src="https://via.placeholder.com/100x100" alt="placeholder">
+                                </div>
+                                <div class="col-sm-12">
+                                        <p>cocktail names</p>
+                                </div></div>
+                                <div class="col-sm-3">
+                                        <div class="col-sm-12">
+                                            <img src="https://via.placeholder.com/100x100" alt="placeholder">
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <p>cocktail names</p>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+        </div>
+        <div class="row">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-11 " style="margin-top:10px; ">
+                        <h2 style="text-align: left; margin-bottom:20px;">Recent</h2>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="col-sm-12">
+                                    <img src="https://via.placeholder.com/100x100" alt="placeholder">
+                                </div>
+                                <div class="col-sm-12">
+                                    <p>cocktail names</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-3"><div class="col-sm-12">
+                                    <img src="https://via.placeholder.com/100x100" alt="placeholder">
+                                </div>
+                                <div class="col-sm-12">
+                                        <p>cocktail names</p>
+                                </div></div>
+                            <div class="col-sm-3"><div class="col-sm-12">
+                                    <img src="https://via.placeholder.com/100x100" alt="placeholder">
+                                </div>
+                                <div class="col-sm-12">
+                                        <p>cocktail names</p>
+                                </div></div>
+                                <div class="col-sm-3">
+                                        <div class="col-sm-12">
+                                            <img src="https://via.placeholder.com/100x100" alt="placeholder">
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <p>cocktail names</p>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+    </div>
+    <script src="db.js"></script>
+    
+    <script>
+    function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+    </script>
+  </body>
+</html>
